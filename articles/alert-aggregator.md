@@ -3,7 +3,12 @@ title: "Slackに流しているアラートをいい感じに集計するActions
 emoji: "🐕"
 type: "tech"
 topics: ["githubactions", "slack"]
-published: false
+published: true
+published_at: 2024-08-18 11:50
 ---
 
 ## はじめに
+
+## 使い方
+
+![](/images/alert-aggregator/slack.png)
