@@ -53,7 +53,7 @@ jobs:
         env:
           SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
         with:
-          get-channel-id: 'CXXXXXXXXXX'
+          get-channel-id: ${{ secrets.GET_CHANNEL_ID }}
           since: '2024-08-01T00:00:00+09:00'
           until: '2024-08-08T00:00:00+09:00'
 ```
