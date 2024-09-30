@@ -52,13 +52,13 @@ jobs:
       - uses: kohei-kohei/alert-aggregator@v0
         env:
           SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+          GET_CHANNEL_ID: ${{ secrets.GET_CHANNEL_ID }}
         with:
-          get-channel-id: ${{ secrets.GET_CHANNEL_ID }}
           since: '2024-08-01T00:00:00+09:00'
           until: '2024-08-08T00:00:00+09:00'
 ```
 
-`env.SLACK_BOT_TOKEN`には先ほどSecretsに登録したトークンを指定し、`get-channel-id`にはアラートを集計したいチャンネルIDを指定してください。チャンネルIDの確認方法は[こちらの記事](https://intercom.help/yoom/ja/articles/5480072-slack%E3%81%AE%E3%83%81%E3%83%A3%E3%83%B3%E3%83%8D%E3%83%ABid%E3%81%AE%E7%A2%BA%E8%AA%8D%E6%96%B9%E6%B3%95)が参考になると思います。
+`env.SLACK_BOT_TOKEN`には先ほどSecretsに登録したトークンを指定し、`GET_CHANNEL_ID`にはアラートを集計したいチャンネルIDを指定してください。チャンネルIDの確認方法は[こちらの記事](https://intercom.help/yoom/ja/articles/5480072-slack%E3%81%AE%E3%83%81%E3%83%A3%E3%83%B3%E3%83%8D%E3%83%ABid%E3%81%AE%E7%A2%BA%E8%AA%8D%E6%96%B9%E6%B3%95)が参考になると思います。
 
 `since`と`until`を指定しない場合は、実行日の前日から1週間前までのアラートを集計します。タイムゾーンは実行時のサーバーに依存しているため、日本時間に設定したい場合は[こちらの例](https://github.com/marketplace/actions/aggregate-alerts#just-aggregating-alerts)のように`env.TZ: 'Asia/Tokyo'`を指定してください。
 
@@ -68,7 +68,7 @@ jobs:
 
 ![](/images/alert-aggregator/actions.png)
 
-`send-channel-id`に送信先のチャンネルIDを指定すれば、集計結果をSlackに送信することもできます。
+`SEND_CHANNEL_ID`に送信先のチャンネルIDを指定すれば、集計結果をSlackに送信することもできます。
 
 ![](/images/alert-aggregator/result.png)
 
