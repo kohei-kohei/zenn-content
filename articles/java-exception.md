@@ -4,7 +4,6 @@ emoji: "☕️"
 type: "tech"
 topics: ["java"]
 published: true
-published_at: 2024-12-17 07:07
 ---
 
 :::message
